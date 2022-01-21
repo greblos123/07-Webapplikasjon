@@ -1,0 +1,40 @@
+
+body {
+	background-color: rgb(195,195,195) ;
+}
+
+#header {
+	background-color: rgb(68,64,89);
+}
+
+.stasjoner {
+	display: grid;
+	grid-template-columns: auto auto auto auto auto;
+	grid-gap: 50px;
+	padding: 50px;
+}
+
+.boks {
+	/* Border til boks V */
+	border-color: black;
+	border-style: solid;
+	border-radius: 12px;
+	/* Størrelse til boks V*/
+	height: 300px;
+	width: 300px;
+	/* innholdstilpasning til boks V */
+	text-align: center;
+	background-color: rgb(255, 255, 255);
+} 
+
+.boksInternt{
+	/* Størrelse til boks V*/
+	height: 50px;
+	width: 75%;
+	/* Border til internebokser V */
+	border-color: black;
+	border-style: solid;
+	border-radius: 6px;
+	/* innholdstilpasning til boks V */
+	margin: 10px auto;
+}
