@@ -7,6 +7,10 @@ body {
 	background-color: rgb(68,64,89);
 }
 
+footer {
+	background-color: rgb(68,64,89);
+}
+
 .stasjoner {
 	display: grid;
 	grid-template-columns: auto auto auto auto auto;
@@ -20,11 +24,13 @@ body {
 	border-style: solid;
 	border-radius: 12px;
 	/* Størrelse til boks V*/
-	height: 300px;
+	height: auto;
 	width: 300px;
 	/* innholdstilpasning til boks V */
 	text-align: center;
 	background-color: rgb(255, 255, 255);
+	padding-top: 10px;
+	padding-bottom: 10px;
 } 
 
 .boksInternt{
