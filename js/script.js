@@ -38,9 +38,13 @@ async function getContent() {
     //sykler på Stasjoner Start
     for (let stasjonsNummer = 0; stasjonsNummer < 10; stasjonsNummer++) {
         document.getElementById("parkeringsPlasserTiljenglig" + (stasjonsNummer + 1)).innerHTML = "Det er " + contentsStatus.stations[stasjonsNummer].num_docks_available + " parkeringsplasser ledig.";
-        /*if () {
 
-        }*/
+        let parkeringsplasserLedig = contentsStatus.stations[stasjonsNummer].num_docks_available
+        let capacity = contentsInfo.stations[stasjonsNummer].capacity;
+
+        if (parkeringsplasserLedig >= (capacity * 0,25)) {
+            document.getElementById("parkeringsPlasserTiljenglig" + (stasjonsNummer + 1)).style.backgroundColor = "#FF0000";
+        }
     }
     //sykler på Stasjoner End
 
