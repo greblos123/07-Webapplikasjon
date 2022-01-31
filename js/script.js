@@ -24,17 +24,39 @@ async function getContent() {
     }
 
     //navn på Stasjoner Start
-    document.getElementById("stasjonNavn1").innerHTML = contentsInfo.stations[0].name;
-    document.getElementById("stasjonNavn2").innerHTML = contentsInfo.stations[1].name;
-    document.getElementById("stasjonNavn3").innerHTML = contentsInfo.stations[2].name;
-    document.getElementById("stasjonNavn4").innerHTML = contentsInfo.stations[3].name;
-    document.getElementById("stasjonNavn5").innerHTML = contentsInfo.stations[4].name;
-    document.getElementById("stasjonNavn6").innerHTML = contentsInfo.stations[5].name;
-    document.getElementById("stasjonNavn7").innerHTML = contentsInfo.stations[6].name;
-    document.getElementById("stasjonNavn8").innerHTML = contentsInfo.stations[7].name;
-    document.getElementById("stasjonNavn9").innerHTML = contentsInfo.stations[8].name;
-    document.getElementById("stasjonNavn10").innerHTML = contentsInfo.stations[9].name;
+    for (let stasjonsNummer = 0; stasjonsNummer < 10; stasjonsNummer++) {
+        let nummer = stasjonsNummer+1;
+        let sammensettning = "stasjonNavn" + nummer;
+        document.getElementById(sammensettning).innerHTML = contentsInfo.stations[stasjonsNummer].name;
+    }
     //navn på Stasjoner End
-    document.getElementById("syklerPåStasjon1").innerHTML = contentsStatus.stations[0].num_bikes_available
+
+    //sykler på Stasjoner Start
+    for (let stasjonsNummer = 0; stasjonsNummer < 10; stasjonsNummer++) {
+        let nummer = stasjonsNummer+1;
+        let sammensettning = "syklerPåStasjon" + nummer;
+        document.getElementById(sammensettning).innerHTML = "Det er " + contentsStatus.stations[stasjonsNummer].num_bikes_available + " sykkler ledig.";
+    }
+    //sykler på Stasjoner End
+
+    //sykler på Stasjoner Start
+    for (let stasjonsNummer = 0; stasjonsNummer < 10; stasjonsNummer++) {
+        let nummer = stasjonsNummer+1;
+        let sammensettning = "parkeringsPlasserTiljenglig" + nummer;
+        document.getElementById(sammensettning).innerHTML = "Det er " + contentsStatus.stations[stasjonsNummer].num_docks_available + " parkeringsplasser ledig.";
+    }
+    //sykler på Stasjoner End
+
+    //drift på Stasjoner Start
+    for (let stasjonsNummer = 0; stasjonsNummer < 10; stasjonsNummer++) {
+        let nummer = stasjonsNummer+1;
+        if (contentsStatus.stations[stasjonsNummer].is_installed == 1) {
+            document.getElementById("drift" + nummer).innerHTML = "Denne Stasjonen er i drift."
+        }
+        else {
+            document.getElementById("drift" + nummer).innerHTML = "Denne Stasjonen er ikke drift."
+        }
+    }
+    //drift på Stasjoner End
 }
 getContent();
