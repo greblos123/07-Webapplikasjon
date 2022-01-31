@@ -20,7 +20,7 @@ async function getContent() {
         console.log("Vi har kontakt!") 
     }
     else {
-        console.log("ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ") 
+        console.log("ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR") 
     }
 
     //navn på Stasjoner Start
@@ -31,7 +31,19 @@ async function getContent() {
 
     //sykler på Stasjoner Start
     for (let stasjonsNummer = 0; stasjonsNummer < 10; stasjonsNummer++) {
-        document.getElementById("syklerPåStasjon" + (stasjonsNummer + 1)).innerHTML = "Det er " + contentsStatus.stations[stasjonsNummer].num_bikes_available + " sykkler ledig.";
+        document.getElementById("syklerPåStasjon" + (stasjonsNummer + 1)).innerHTML = "Det er " + contentsStatus.stations[stasjonsNummer].num_bikes_available + " sykler ledig.";
+
+        //fargeSetting Og % Regulering Start
+        if (contentsStatus.stations[stasjonsNummer].num_bikes_available <= contentsInfo.stations[stasjonsNummer].capacity * 0.2) {
+            document.getElementById("syklerPåStasjon" + (stasjonsNummer + 1)).style.backgroundColor = "#CC0000";
+        }
+        else if (contentsStatus.stations[stasjonsNummer].num_bikes_available <= contentsInfo.stations[stasjonsNummer].capacity * 0.3) {
+            document.getElementById("syklerPåStasjon" + (stasjonsNummer + 1)).style.backgroundColor = "#CCCC00";
+        }
+        else {
+            document.getElementById("syklerPåStasjon" + (stasjonsNummer + 1)).style.backgroundColor = "#00CC00";
+        }
+        //fargeSetting Og % Regulering End
     }
     //sykler på Stasjoner End
 
@@ -39,12 +51,18 @@ async function getContent() {
     for (let stasjonsNummer = 0; stasjonsNummer < 10; stasjonsNummer++) {
         document.getElementById("parkeringsPlasserTiljenglig" + (stasjonsNummer + 1)).innerHTML = "Det er " + contentsStatus.stations[stasjonsNummer].num_docks_available + " parkeringsplasser ledig.";
 
-        let parkeringsplasserLedig = contentsStatus.stations[stasjonsNummer].num_docks_available
-        let capacity = contentsInfo.stations[stasjonsNummer].capacity;
-
-        if (parkeringsplasserLedig >= (capacity * 0,25)) {
-            document.getElementById("parkeringsPlasserTiljenglig" + (stasjonsNummer + 1)).style.backgroundColor = "#FF0000";
+        //fargeSetting Og % Regulering Start
+        if (contentsStatus.stations[stasjonsNummer].num_docks_available <= contentsInfo.stations[stasjonsNummer].capacity * 0.2) {
+            document.getElementById("parkeringsPlasserTiljenglig" + (stasjonsNummer + 1)).style.backgroundColor = "CC0000";
         }
+        else if (contentsStatus.stations[stasjonsNummer].num_docks_available <= contentsInfo.stations[stasjonsNummer].capacity * 0.3) {
+            document.getElementById("parkeringsPlasserTiljenglig" + (stasjonsNummer + 1)).style.backgroundColor = "#CCCC00";
+        }
+        else {
+            document.getElementById("parkeringsPlasserTiljenglig" + (stasjonsNummer + 1)).style.backgroundColor = "#00CC00";
+        }
+        //fargeSetting Og % Regulering End
+
     }
     //sykler på Stasjoner End
 
@@ -52,11 +70,11 @@ async function getContent() {
     for (let stasjonsNummer = 0; stasjonsNummer < 10; stasjonsNummer++) {
         if (contentsStatus.stations[stasjonsNummer].is_installed == 1) {
             document.getElementById("drift" + (stasjonsNummer + 1)).innerHTML = "Denne Stasjonen er i drift.";
-            document.getElementById("drift" + (stasjonsNummer + 1)).style.backgroundColor = "#00FF00";
+            document.getElementById("drift" + (stasjonsNummer + 1)).style.backgroundColor = "#00CC00";
         }
         else {
             document.getElementById("drift" + (stasjonsNummer + 1)).innerHTML = "Denne Stasjonen er ikke drift."
-            document.getElementById("drift" + (stasjonsNummer + 1)).style.backgroundColor = "#FF0000";
+            document.getElementById("drift" + (stasjonsNummer + 1)).style.backgroundColor = "#CC0000";
         }
     }
     //drift på Stasjoner End

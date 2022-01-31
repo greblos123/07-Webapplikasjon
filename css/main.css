@@ -44,4 +44,5 @@ footer {
 	border-radius: 6px;
 	/* innholdstilpasning til boks V */
 	margin: 10px auto;
+	justify-content: center;
 }
