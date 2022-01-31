@@ -25,36 +25,34 @@ async function getContent() {
 
     //navn på Stasjoner Start
     for (let stasjonsNummer = 0; stasjonsNummer < 10; stasjonsNummer++) {
-        let nummer = stasjonsNummer+1;
-        let sammensettning = "stasjonNavn" + nummer;
-        document.getElementById(sammensettning).innerHTML = contentsInfo.stations[stasjonsNummer].name;
+        document.getElementById("stasjonNavn" + (stasjonsNummer + 1)).innerHTML = contentsInfo.stations[stasjonsNummer].name;
     }
     //navn på Stasjoner End
 
     //sykler på Stasjoner Start
     for (let stasjonsNummer = 0; stasjonsNummer < 10; stasjonsNummer++) {
-        let nummer = stasjonsNummer+1;
-        let sammensettning = "syklerPåStasjon" + nummer;
-        document.getElementById(sammensettning).innerHTML = "Det er " + contentsStatus.stations[stasjonsNummer].num_bikes_available + " sykkler ledig.";
+        document.getElementById("syklerPåStasjon" + (stasjonsNummer + 1)).innerHTML = "Det er " + contentsStatus.stations[stasjonsNummer].num_bikes_available + " sykkler ledig.";
     }
     //sykler på Stasjoner End
 
     //sykler på Stasjoner Start
     for (let stasjonsNummer = 0; stasjonsNummer < 10; stasjonsNummer++) {
-        let nummer = stasjonsNummer+1;
-        let sammensettning = "parkeringsPlasserTiljenglig" + nummer;
-        document.getElementById(sammensettning).innerHTML = "Det er " + contentsStatus.stations[stasjonsNummer].num_docks_available + " parkeringsplasser ledig.";
+        document.getElementById("parkeringsPlasserTiljenglig" + (stasjonsNummer + 1)).innerHTML = "Det er " + contentsStatus.stations[stasjonsNummer].num_docks_available + " parkeringsplasser ledig.";
+        /*if () {
+
+        }*/
     }
     //sykler på Stasjoner End
 
     //drift på Stasjoner Start
     for (let stasjonsNummer = 0; stasjonsNummer < 10; stasjonsNummer++) {
-        let nummer = stasjonsNummer+1;
         if (contentsStatus.stations[stasjonsNummer].is_installed == 1) {
-            document.getElementById("drift" + nummer).innerHTML = "Denne Stasjonen er i drift."
+            document.getElementById("drift" + (stasjonsNummer + 1)).innerHTML = "Denne Stasjonen er i drift.";
+            document.getElementById("drift" + (stasjonsNummer + 1)).style.backgroundColor = "#00FF00";
         }
         else {
-            document.getElementById("drift" + nummer).innerHTML = "Denne Stasjonen er ikke drift."
+            document.getElementById("drift" + (stasjonsNummer + 1)).innerHTML = "Denne Stasjonen er ikke drift."
+            document.getElementById("drift" + (stasjonsNummer + 1)).style.backgroundColor = "#FF0000";
         }
     }
     //drift på Stasjoner End
