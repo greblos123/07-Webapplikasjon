@@ -1,22 +1,64 @@
 
-body {
-	background: rgb(0,95,201);
-	background: linear-gradient(0deg, rgba(0,95,201,1) 0%, rgba(244,247,248,1) 100%);
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
 }
 
 #header {
 	background-color: rgb(68,64,89);
 }
 
-footer {
-	background-color: rgb(11, 22, 63);
-	color:rgb(255, 255, 255);
-	text-align: center;
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
+#header {
+	background-color: rgb(68,64,89);
+}
+
+.footer-container {
+	background-color: rgb(11, 22, 63);
+	padding-bottom: 4rem 0 4rem 0;
+}
+
+.footer {
+	width: 80%;
+	height: 80%;
+	background-color: rgb(11, 22, 63);
+	color:rgb(255, 255, 255);
+	display: flex;
+	justify-content: center;
+	text-align: center;	
+	margin: 0 auto 0 auto;
+	padding: 50px;
+}
+
+.footer-heading.footer-1 {
+	display: flex;
+	flex-direction: column;
+	margin-right: 4rem;
+}
+
+.footer-heading h2 {
+	margin-bottom: 2rem;
+}
+
+.footer-heading a {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+	margin-bottom: 0.5rem;
+}
 .stasjoner {
 	display: grid;
 	grid-template-columns: auto auto auto auto auto;
+	background: rgb(0,95,201);
+	background: linear-gradient(0deg, rgba(0,95,201,1) 0%, rgba(244,247,248,1) 100%);
 	grid-gap: 50px;
 	padding: 50px;
 }
