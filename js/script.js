@@ -78,5 +78,7 @@ async function getContent() {
         }
     }
     //drift på Stasjoner End
+    let nummerPåStasjoner = (contentsInfo.stations)
+    console.log(nummerPåStasjoner)
 }
 getContent();

@@ -9,11 +9,11 @@ html, body {
 
 .navbar {
 	background-color: rgb(68,64,89);
-	list-style: none;
-	display: grid;
-	grid-template-columns: auto auto auto auto auto;
-	text-align: center;
-	justify-self: end;
+	color:rgb(255, 255, 255);
+	display: flex;
+	justify-content: left;
+	text-align: center;	
+	margin: auto;
 }
 
 #navbar-logo {
@@ -22,8 +22,8 @@ html, body {
 	margin: 10px;
 }
 
-.nav-links {
-	text-decoration: none;
+#overskrift {
+	margin: auto auto auto 0;
 }
 
 * {
@@ -99,7 +99,12 @@ html, body {
 	border-color: black;
 	border-style: solid;
 	border-radius: 6px;
-	/* innholdstilpasning til boks V */
+	/* Tilpasning til boks V */
 	margin: 10px auto;
 	justify-content: center;
+}
+
+.boksInternt .p {	
+	display: flex;
+	justify-content: space-evenly;
 }
