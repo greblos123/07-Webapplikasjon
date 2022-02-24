@@ -80,5 +80,17 @@ async function getContent() {
     //drift på Stasjoner End
     let nummerPåStasjoner = (contentsInfo.stations)
     console.log(nummerPåStasjoner)
+
+    const BtnAdd = document.querySelector(".btn-add");
+    const leggTilNyBoks = document.getElementById("test");
+
+    BtnAdd.addEventListener("click", AddNew);
+
+    function AddNew(){
+        const newDiv = document.createElement("div");
+        console.log("add");
+        newDiv.classList.add("boks");
+        leggTilNyBoks.appendChild(newDiv);
+    }
 }
 getContent();

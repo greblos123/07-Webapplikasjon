@@ -104,6 +104,7 @@ html, body {
 	justify-content: center;
 }
 
+	/* Prøvde å få til at det inne i de interne boksene ble sentret etter js ble addet */
 .boksInternt .p {	
 	display: flex;
 	justify-content: space-evenly;
